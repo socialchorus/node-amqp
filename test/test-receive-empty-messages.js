@@ -9,7 +9,7 @@ connection.addListener('ready', function () {
 
     q.subscribe(function (json, headers, deliveryInfo) {
       clearTimeout(timeout);
-      connection.end();
+      connection.disconnect();
     }).addCallback(function () {
       puts("Publishing one empty message.");
       exc.publish('node-json-queue', '');
@@ -19,7 +19,7 @@ connection.addListener('ready', function () {
 
 timeout = setTimeout(function() {
   puts("ERROR: Timeout occured!!!!!!!");
-  connection.end();
+  connection.disconnect();
   assert.ok(1, 2);
 }, 5000);
 

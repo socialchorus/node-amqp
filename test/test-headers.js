@@ -22,7 +22,7 @@ connection.on('ready', function () {
 
         setTimeout(function () {
           // wait one second to receive the message, then quit
-          connection.end();
+          connection.disconnect();
         }, 1000);
       });
       q.subscribeRaw(function (m) {

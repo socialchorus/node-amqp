@@ -34,7 +34,7 @@ connection.addListener('ready', function () {
             setTimeout(function () {
               // wait one second to receive the message, then quit
               q2.destroy();
-              connection.end();
+              connection.disconnect();
             }, 1000);
           });
           

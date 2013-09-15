@@ -26,7 +26,7 @@ function countdownLatch(num, callback) {
 }
 
 var testsLeft = countdownLatch(3, function() {
-  connection.end();
+  connection.disconnect();
 });
 
 // Test multiple creations of the same queue

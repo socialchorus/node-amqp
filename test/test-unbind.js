@@ -33,13 +33,13 @@ conn.once('ready', function () {
       // Wait a bit before ending so we can receive the message if it does come (it shouldn't).
       later(function() {
         assert.ok(thrown);
-        conn.end();
+        conn.disconnect();
         process.exit();
       });
     });
   });
 });
 
-process.addListener('exit', function () {
+process.addListener('end', function () {
     assert.equal(1, recvCount);
 });

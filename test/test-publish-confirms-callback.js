@@ -8,7 +8,7 @@ connection.addListener('ready', function () {
     exchange.publish("", "hello", { mandatory: true },function(){
       confirmed++;
       clearTimeout(timeout);
-      connection.end();
+      connection.disconnect();
     });
   });
 });

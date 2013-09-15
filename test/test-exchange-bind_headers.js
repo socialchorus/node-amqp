@@ -32,7 +32,7 @@ connection.addListener('ready', function () {
                           queue.destroy();
                           dstExchange.destroy();
                           srcExchange.destroy();
-                          connection.end();
+                          connection.disconnect();
                         }, 1000);
                     });
                 });

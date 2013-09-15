@@ -22,7 +22,7 @@ function followup() {
   assert.ok(fired);
   assert.ok(replyCode === 312);
   assert.ok(replyText === "NO_ROUTE");
-  connection.end();
+  connection.disconnect();
 }
 fire = setTimeout(function() {
   followup();

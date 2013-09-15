@@ -43,7 +43,7 @@ connection.addListener('ready', function () {
           assert(timeOutFired);
 
           puts('closing connection');
-          connection.end();
+          connection.disconnect();
 
         } else {
           throw new Error('Too many message!');

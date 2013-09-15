@@ -17,7 +17,7 @@ connection.addListener('ready', function () {
 
         setTimeout(function () {
           // wait one second to receive the message, then quit
-          connection.end();
+          connection.disconnect();
         }, 1000);
       });
       

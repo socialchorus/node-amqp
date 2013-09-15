@@ -49,7 +49,7 @@ connection.addListener('ready', function () {
 
           puts('closing connection');
 
-          connection.end();
+          connection.disconnect();
         } else {
           throw new Error('Too many message!');
         }

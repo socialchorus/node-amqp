@@ -8,7 +8,7 @@ connection.on('ready', function() {
   connection.queue('node-subscribe-event-queue', function(q) {
     q.bind(e, '');
     q.subscribe({ ack: true, prefetchCount: 0 }, function() {
-      connection.end();
+      connection.disconnect();
     });
 
     q.on('basicQosOk', function() {

@@ -27,10 +27,10 @@ connection.addListener('ready', function () {
               queue.destroy();
               dstExchange.destroy();
               // If autoDelete:true on srcExchange, you can get a writeAfterEnd error. Comment out
-              // connection.end() to find the real error - the srcExchange doesn't exist.
+              // connection.disconnect() to find the real error - the srcExchange doesn't exist.
               // See http://www.rabbitmq.com/e2e.html
               srcExchange.destroy();
-              connection.end();
+              connection.disconnect();
             }, 1000);
           });
         });

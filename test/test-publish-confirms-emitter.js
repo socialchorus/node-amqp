@@ -10,7 +10,7 @@ connection.addListener('ready', function () {
     publish.addListener('ack', function(){
       confirmed++;
       clearTimeout(timeout); 
-      connection.end();
+      connection.disconnect();
     });
 
   });

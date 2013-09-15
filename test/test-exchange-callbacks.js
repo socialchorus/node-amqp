@@ -18,7 +18,7 @@ connection.addListener('ready', function () {
   setTimeout( function() {
     assert.ok(nonAmqExchangeCalledback, "non amq.* exchange callback method not called");
     assert.ok(amqExchangeCalledback, "amq.topic exchange callback method not called");
-    connection.end();
+    connection.disconnect();
     connection.destroy();
     }, 1000);
 });

@@ -19,8 +19,8 @@ connection.on('ready', function() {
       q.on('error', function(err) {
         assert.equal(err.code, 406);
         assert.ok(err.message.indexOf('PRECONDITION_FAILED') === 0);
-        connection.end();
-        conn.end();
+        connection.disconnect();
+        conn.disconnect();
       });
     });
   });

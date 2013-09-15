@@ -16,7 +16,7 @@ connection.on('ready', function() {
         connection.publish(queueName, {"msg": 'Message2'});
         // alas I cannot think of a way to synchronise on the queue
         setTimeout(function() { q.destroy().addCallback(function() {
-          connection.end(); })}, 500);
+          connection.disconnect(); })}, 500);
       });
     });
   });
